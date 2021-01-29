@@ -8,26 +8,15 @@ class App extends Component {
 
     this.state = {
 
-      aliens : [
-        {
-          name : 'Canon Bolt',
-          id : '01'
-        },
-        {
-          name : 'Spider Monkey',
-          id : '02'
-        },
-        {
-          name : 'Sting Fly',
-          id : '03'
-        },
-        {
-          name : 'Heat Blast',
-          id : '04'
-        }
-      ]
+      aliens : []
 
     };
+  }
+
+  componentDidMount(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(name => this.setState({ aliens : name }))
   }
 
   render(){
