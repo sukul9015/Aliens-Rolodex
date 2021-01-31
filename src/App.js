@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
 
-      aliens : []
+      aliens : [],
+      searchField : ''
 
     };
   }
@@ -23,9 +24,11 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        <CardList aliens = {this.state.aliens}>     
-
-        </CardList>
+        <input type='search' placeholder='Search Aliens' onChange={ e => { 
+          this.setState({ searchField : e.target.value }, () => {console.log(this.state);} /*caLLback for synchronous function)*/;
+         
+          } } />
+        <CardList aliens = {this.state.aliens} />     
     </div>
     );
   }
