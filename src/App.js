@@ -25,7 +25,7 @@ class App extends Component {
     return(
       <div className="App">
         <input type='search' placeholder='Search Aliens' onChange={ e => { 
-          this.setState({ searchField : e.target.value }, () => {console.log(this.state);} /*caLLback for synchronous function)*/;
+          this.setState({ searchField : e.target.value }, () => {console.log(this.state);} /*caLLback for synchronous function*/);
          
           } } />
         <CardList aliens = {this.state.aliens} />     
