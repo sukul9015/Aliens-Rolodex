@@ -6,7 +6,8 @@ export const SearchBox = ({ placeholder , clickmethod }) => (
 
     <input 
     type='search' 
+    className = 'search'
     placeholder= {placeholder}
     onChange = { clickmethod } />
 
-)
+);
