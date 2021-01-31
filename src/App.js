@@ -22,13 +22,15 @@ class App extends Component {
   }
 
   render(){
+
+    const { aliens , searchField } = this.state;
+    const filteredAliens = aliens.filter(alien => alien.name.toLowerCase().includes(searchField.toLowerCase()));
+
     return(
       <div className="App">
         <input type='search' placeholder='Search Aliens' onChange={ e => { 
-          this.setState({ searchField : e.target.value }, () => {console.log(this.state);} /*caLLback for synchronous function*/);
-         
-          } } />
-        <CardList aliens = {this.state.aliens} />     
+          this.setState({ searchField : e.target.value });  } } />
+        <CardList aliens = {filteredAliens} />     
     </div>
     );
   }
